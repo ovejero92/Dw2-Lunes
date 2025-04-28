@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nombreProducto = "Zapatillas";
+        let precioUnitario = 10000;
+        let cantidadDeseada = prompt("¿Cuantas unidades deseas comprar?");
+
+        cantidadDeseada = Number(cantidadDeseada);
+        cantidadDeseada = parseInt(cantidadDeseada);
+
+        let costoTotal = precioUnitario * cantidadDeseada;
+    
+        if(cantidadDeseada >= 5) {
+            costoTotal = costoTotal * 0.9;
+        }
+
+        alert(`El total a pagar por ${cantidadDeseada} ${nombreProducto} es $${costoTotal}`);
+</script>
+</body>
+</html>

@@ -3,94 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi página</title>
     <style>
+        /* Navbar */
+        nav {
+          background-color: #007BFF;
+          padding: 1rem 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: white;
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+
+        nav a {
+          color: white;
+          text-decoration: none;
+          margin: 0 1rem;
+          transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+          color: #d1e7ff;
+        }
+
+        /* Footer */
+        footer {
+          background-color: #f8f9fa;
+          padding: 1rem;
+          text-align: center;
+          font-size: 0.9rem;
+          color: #555;
+          margin-top: 2rem;
+        }
+
+        /* Cuerpo */
         body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f0f4f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 2rem;
-  }
+          font-family: 'Segoe UI', sans-serif;
+          background-color: #f0f4f8;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+          margin: 0;
+        }
 
-  .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-    width: 100%;
-    max-width: 1000px;
-  }
+        .container {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 2rem;
+          width: 100%;
+          max-width: 1000px;
+          margin: 2rem auto;
+          padding: 0 2rem;
+        }
 
-  .card {
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
+        .card {
+          background: white;
+          border-radius: 1rem;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-  .card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
+        .card:hover {
+          transform: scale(1.03);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
 
-  .card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
+        .card img {
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
+        }
 
-  .card-content {
-    padding: 1rem;
-  }
+        .card-content {
+          padding: 1rem;
+        }
 
-  .card-title {
-    font-size: 1.2rem;
-    margin: 0 0 0.5rem 0;
-  }
+        .card-title {
+          font-size: 1.2rem;
+          margin: 0 0 0.5rem 0;
+        }
 
-  .card-text {
-    font-size: 0.95rem;
-    color: #555;
-  }
+        .card-text {
+          font-size: 0.95rem;
+          color: #555;
+        }
 
-  .card-button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #007BFF;
-    color: white;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.2s ease;
-  }
+        .card-button {
+          display: inline-block;
+          margin-top: 1rem;
+          padding: 0.5rem 1rem;
+          background: #007BFF;
+          color: white;
+          border-radius: 0.5rem;
+          text-decoration: none;
+          font-weight: bold;
+          transition: background 0.2s ease;
+        }
 
-  .card-button:hover {
-    background: #0056b3;
-  }
+        .card-button:hover {
+          background: #0056b3;
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../assets/alertas.js"></script>
+    <script src="../assets/e-fun.js"></script>
 </head>
 <body>
-    
 
+<!-- NAVBAR -->
+<nav>
+  <div>Mi Tienda</div>
+  <div>
+    <a href="#">Inicio</a>
+    <a href="#">Productos</a>
+    <a href="#">Contacto</a>
+  </div>
+</nav>
 
-
-    <script>
-        let nombre = prompt("cual es tu nombre:")
-        let edad = 18
-
-        document.write("<h1>Hola, " + nombre + " elegí alguna opción:")
-
-    </script>
-
-    
+<!-- Tarjetas -->
 <div class="container">
     <div class="card">
-      <img src="https://static.vecteezy.com/system/resources/previews/037/226/710/non_2x/ai-generated-cute-down-jacket-in-cartoon-style-png.png" alt="Gatito">
+      <img src="https://static.vecteezy.com/system/resources/previews/037/226/710/non_2x/ai-generated-cute-down-jacket-in-cartoon-style-png.png" alt="Campera">
       <div class="card-content">
         <h3 class="card-title">¿Hace frío?</h3>
         <p class="card-text">Si hace frío, ¡ponete una campera bien abrigada!</p>
@@ -99,22 +135,39 @@
     </div>
 
     <div class="card">
-      <img src="https://e7.pngegg.com/pngimages/983/440/png-clipart-cookie-cookie.png" alt="Osito">
+      <img src="https://e7.pngegg.com/pngimages/983/440/png-clipart-cookie-cookie.png" alt="Merienda">
       <div class="card-content">
         <h3 class="card-title">¿Tenés hambre?</h3>
         <p class="card-text">Si tenés hambre, es hora de una rica merienda 🍪🥛.</p>
-        <a href="#" class="card-button">¡Elegir!</a>
+        <button class="card-button" onclick="MostrarError('No hay nada para comer')">¡Elegir!</button>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKscveCghwW3bcAcKG_EUK7qdnqHx0s_Clgg&s" alt="Aleatorio">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKscveCghwW3bcAcKG_EUK7qdnqHx0s_Clgg&s" alt="Paraguas">
       <div class="card-content">
         <h3 class="card-title">¿Llovizna?</h3>
         <p class="card-text">Si está lloviendo, mejor llevar un paraguas ☂️.</p>
-        <a href="#" class="card-button">Elegir!</a>
+        <a href="#" class="card-button">¡Elegir!</a>
       </div>
     </div>
-  </div>
+</div>
+
+<script>
+  let nombreUsuario = prompt("Cual es tu nombre:")
+  MensajeDeBienvenida(nombreUsuario);
+ // ConfirmacionDeCompra("Remera");
+
+  const precioU = 100;
+  const descuento = 10;
+
+ console.log(calcularPrecioFinal(precioU,descuento))
+</script>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Mi Tienda. Todos los derechos reservados.
+</footer>
+
 </body>
 </html>

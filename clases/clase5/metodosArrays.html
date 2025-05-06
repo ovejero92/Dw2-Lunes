@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Array base
+    let frutas = ["manzana", "banana", "pera", "naranja"];
+    console.log("Array original:", frutas);
+
+    // push: agrega al final
+    frutas.push("sandía");
+    console.log("push('sandía') →", frutas);
+
+    // pop: elimina el último
+    let ultima = frutas.pop();
+    console.log("pop() →", ultima, "| Resultado:", frutas);
+
+    // unshift: agrega al inicio
+    frutas.unshift("kiwi");
+    console.log("unshift('kiwi') →", frutas);
+
+    // shift: elimina el primero
+    let primera = frutas.shift();
+    console.log("shift() →", primera, "| Resultado:", frutas);
+
+    // indexOf: posición de un elemento
+    console.log("indexOf('pera') →", frutas.indexOf("pera"));
+
+    // includes: verifica si existe
+    console.log("includes('banana') →", frutas.includes("banana"));
+
+    // join: une todo el array en un string
+    console.log("join(' - ') →", frutas.join(" - "));
+
+    // concat: une dos arrays
+    let verduras = ["lechuga", "tomate"];
+    let mercado = frutas.concat(verduras);
+    console.log("concat(verduras) →", mercado);
+
+    // slice: extrae sin modificar el original
+    let algunas = frutas.slice(1, 3); // desde el índice 1 al 2
+    console.log("slice(1, 3) →", algunas, "| Original:", frutas);
+
+    // splice: modifica el array (elimina y/o agrega)
+    frutas.splice(1, 1, "frutilla", "uva"); // desde el índice 1, elimina 1 e inserta 2
+    console.log("splice(1, 1, 'frutilla', 'uva') →", frutas);
+
+    // forEach: recorre cada elemento
+    console.log("forEach:");
+    frutas.forEach((fruta, i) => {
+      console.log(`  ${i}: ${fruta}`);
+    });
+
+    // map: crea un nuevo array modificando los elementos
+    let enMayusculas = frutas.map(f => f.toUpperCase());
+    console.log("map(toUpperCase) →", enMayusculas);
+
+    // filter: devuelve los que cumplen cierta condición
+    let cortas = frutas.filter(f => f.length <= 6);
+    console.log("filter(longitud <= 6) →", cortas);
+
+    // find: busca el primer elemento que cumpla una condición
+    let conA = frutas.find(f => f.includes("a"));
+    console.log("find(incluye 'a') →", conA);
+
+    // sort: ordena alfabéticamente
+    let ordenadas = [...frutas].sort(); // copiamos para no alterar el original
+    console.log("sort() →", ordenadas);
+
+    // reverse: invierte el orden
+    let alReves = [...frutas].reverse();
+    console.log("reverse() →", alReves);
+    </script>
+</body>
+</html>

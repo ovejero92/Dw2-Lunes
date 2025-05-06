@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Simulador de compra</h1>
+    <script>
+        // Declarar variables
+        const producto1 = "Remera";
+        const producto2 = "Pantalon";
+        const producto3 = "Zapatillas";
+
+        const precio1 = 5000;
+        const precio2 = 8000;
+        const precio3 = 12000;
+
+     
+
+        
+        function comprarProducto() {
+            let nombre = "gustavo"
+            let cantidad = 0;
+            let total = 0;
+
+            alert(`Hola ${nombre}`)
+
+            let productoELegido = prompt(`elegi 1 producto \nProductos: \n-${producto1} $${precio1}\n-${producto2} $${precio2} \n-${producto3} $${precio3} (tiene que ser tal cual el nombre.)`);
+
+            if(productoELegido == producto1 ) {
+                cantidad = prompt(`cuantas ${producto1} queres comprar`);
+                total = precio1 * cantidad;
+                alert(`La cantidad de ${producto1} son ${cantidad} y el total es: $${total}`)
+                repetir()
+            } else if(productoELegido == producto2) {
+                cantidad = prompt(`cuantas ${producto2} queres comprar`);
+                total = precio2 * cantidad;
+                alert(`La cantidad de ${producto2} son ${cantidad} y el total es: $${total}`)
+                repetir()
+            } else if(productoELegido == producto3) {
+                cantidad = prompt(`cuantas ${producto3} queres comprar`);
+                total = precio3 * cantidad;
+                alert(`La cantidad de ${producto3} son ${cantidad} y el total es: $${total}`)
+                repetir()
+            } else {
+                alert("EL producto no existe")
+                comprarProducto();
+            }
+            
+        }
+        const repetir = () => {
+            let repetir = prompt("¿Queres comprar otra cosa? (si/no)");
+                if(repetir == "si") {
+                    comprarProducto();
+                } else if(repetir == "no") {
+                    alert("Gracias por su compra")
+                }
+        }
+        comprarProducto();
+    </script>
+</body>
+</html>

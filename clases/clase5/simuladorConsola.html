@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clase JS - Bucles y Arrays</title>
+</head>
+<body>
+  <h1>Simulador de Tienda</h1>
+  <p>Hacé clic en el botón para comenzar tu compra.</p>
+  <button onclick="agregarAlCarrito()">Iniciar compra</button>
+
+  <script>
+    // Array de productos
+    const productosDisponibles = ["remera", "pantalon", "zapatillas", "campera"];
+    
+    // Precios que coinciden con los productos por índice
+    const precios = [5000, 8000, 12000, 15000];
+
+    // Carrito (array de índices de productos)
+    const carrito = [];
+
+    // Mostrar productos con precio
+    function mostrarProductos() {
+      console.clear();
+      console.log("Productos disponibles:");
+      for (let i = 0; i < productosDisponibles.length; i++) {
+        console.log(`${i + 1}. ${productosDisponibles[i]} - $${precios[i]}`);
+      }
+    }
+
+    // Agregar al carrito
+    function agregarAlCarrito() {
+      let seguir = true;
+
+      while (seguir) {
+        mostrarProductos();
+        const opcion = prompt("¿Qué producto querés agregar al carrito? (escribí el nombre o 'salir')");
+
+        if (opcion === null || opcion.toLowerCase() === "salir") {
+          seguir = false;
+        } else {
+            const index = productosDisponibles.indexOf(opcion);          
+          if (index !== -1) {
+            carrito.push(index);
+            alert(`${productosDisponibles[index]} agregada al carrito.`);
+          } else {
+            alert("Ese producto no existe.");
+          }
+        }
+      }
+
+      finalizarCompra();
+    }
+
+    // Finalizar compra
+    function finalizarCompra() {
+      if (carrito.length === 0) {
+        alert("No compraste nada.");
+      } else {
+        let resumen = "Gracias por tu compra. Llevás:\n";
+        let total = 0;
+
+        for (let i = 0; i < carrito.length; i++) {
+          const index = carrito[i];
+          resumen += `- ${productosDisponibles[index]}: $${precios[index]}\n`;
+          total += precios[index];
+        }
+
+        resumen += `\nTotal a pagar: $${total}`;
+        alert(resumen);
+      }
+    }
+  </script>
+</body>
+</html>

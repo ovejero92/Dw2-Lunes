@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //              0  1   2    3
+        let Prouctos = ["Samsung galaxy S12","Apple iPhone 13","Samsung A06","Mototrola moto G75","LG K71"];
+
+        console.log("FOR NORMAL")
+        for(  let i= 2   ; i< Prouctos.length ; i++){
+            console.log("Indice "+i + "producto:" + Prouctos[i])
+        }
+
+        let productoEliminado = Prouctos.pop()
+        
+        
+        console.log("El producto eliminado es: " + productoEliminado);
+
+        console.log("-".repeat(36))
+        
+        for( prod of Prouctos ){
+            console.log(prod);
+        }
+
+    </script>
+</body>
+</html>

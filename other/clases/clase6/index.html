@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      <button onclick="preguntarConfirmacion()">Eliminar archivo</button>
+    <script>
+        let Juagador10 = {
+            nombre: "messi",
+            edad: 36,
+            posicion:10
+        }
+        let Jugador9 = {
+
+        }
+        
+        Juagador10.estatura = 1.65;
+
+        console.log(Juagador10) // messi
+
+        const Jugadores = [
+        // 0    
+        { id:1,  nombre:"Lionel Messi",  posicion: 10  },
+        // 1
+        { id:2,  nombre:"Gabriel López",   prosicion: 8  },
+          // 2
+        { id:3,  nombre:"sdlkajdslakjd",   prosicion: 22  },
+        ];
+
+        for(let i = 0; i < Jugadores.length; i++) {
+            console.log(Jugadores[i].id)
+            console.log(Jugadores[i].nombre);
+            console.log(Jugadores[i].posicion);
+        }
+
+        function preguntarConfirmacion() {
+        const respuesta = confirm("¿Estás seguro de que querés eliminar el archivo?");
+        if (respuesta) {
+            alert("Archivo eliminado.");
+        } else {
+        alert("Operación cancelada.");
+        }
+        }
+
+        // .isNaN
+        console.log(Number.isNaN("hola"));         // false (porque es un string)
+        console.log(Number.isNaN(NaN));            // true
+
+        // .toFixed()
+        let numero = 3.141592;
+        console.log(numero.toFixed(2));            // "3.14" (como string)
+
+        // .toString()
+        let num = 255;
+        console.log(num.toString());               // "255"
+        console.log(num.toString(16));             // "ff" (hexadecimal)
+
+        // .parseInt()
+        console.log(parseInt("123px"));            // 123
+        console.log(parseInt("10", 2));            // 2 (interpreta como binario)
+
+        // .parseFloat()
+        console.log(parseFloat("3.14 metros"));    // 3.14
+        console.log(parseFloat("10.00"));          // 10
+
+    </script>
+</body>
+</html>

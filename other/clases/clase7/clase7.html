@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <style>
+    body {
+      font-family: sans-serif;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    .destacado {
+      color: red;
+      font-weight: bold;
+    }
+
+    .card {
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin: 0 0 5px;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 10px;
+}
+
+.card-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.card-btn:hover {
+  background-color: #2980b9;
+}
+
+  </style>
+</head>
+<body>
+    <h1 id="titulo">Titulo</h1>
+
+    <ul>
+        <li class="link"><a id="linkeo">Producto</a></li>
+        <li class="link">producto</li>
+        <li class="link">aslkdja</li>
+        <li class="link">asdadk</li>
+    </ul>
+    
+    <h2>asdadad</h2>
+    <h2>klasjdlakjdlaskjda</h2>
+    <h2>iouiohiuch</h2>
+    
+  <div class="card">
+  <img id="imagen" alt="producto" class="card-img" >
+  <div class="card-content">
+    <h3 class="card-title">Producto Ejemplo</h3>
+    <p class="card-description">Descripción breve del producto. Muy útil.</p>
+    <button class="card-btn">Agregar al carrito</button>
+  </div>
+
+    <script>
+        // let h1 = document.getElementById("h1")
+        let titulo = document.getElementById("titulo");
+        titulo.textContent = "asdad";
+        if(titulo.textContent == "otra cosa") {
+            titulo.style.color = "red";
+        } else {
+            titulo.style.color = "green";
+        }
+
+        let lista = document.getElementsByClassName("link");
+        lista[2].textContent = "contacto"
+
+        let h2 = document.getElementsByTagName("h2");
+        
+
+        let h1 = document.querySelector("#titulo");
+        let lista2 = document.querySelectorAll(".link");
+        let h22 = document.querySelector("h2");
+
+
+        let linkeo = document.getElementById("linkeo");
+
+        linkeo.setAttribute("href","../../../pages/tienda.html")
+
+        console.log(linkeo.getAttribute("href"))
+
+        let stock = 0;
+
+        let img = document.querySelector("#imagen")
+        if(stock == 0) {
+            img.setAttribute("src","https://sincodigotucuman.com/wp-content/uploads/2023/08/sinstock.jpg")
+        } else {
+            img.setAttribute("src","https://www.svgrepo.com/show/422038/product.svg")
+        }
+
+       // console.dir(document)
+    </script>
+</body>
+</html>

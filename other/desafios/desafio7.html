@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .titulo{
+            color: red;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="nombreProducto" >Mouse</h1>
+    <p id="precioProducto">Precio: $500</p>
+    <script>
+        let precioProducto = document.getElementById("precioProducto");
+        precioProducto.innerText = "Precio: $450";
+
+        let nombreProducto = document.querySelector("#nombreProducto");
+        nombreProducto.classList.add("titulo");
+
+    </script>
+</body>
+</html>

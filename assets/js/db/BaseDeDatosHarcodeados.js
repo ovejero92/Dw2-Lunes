@@ -18,4 +18,4 @@ const baseDeDatos = [
         ]
     }
 ]
-
+baseDeDatos[0].productos[1].precio = 24000

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Mover caja*/
+          #caja {
+    width: 100px;
+    height: 100px;
+    background: lightblue;
+    position: absolute;
+    cursor: move;
+  }
+  /* fin mover caja */
+  /* Evento caja animada */
+   #cajaAnimada {
+    width: 100px;
+    height: 100px;
+    background: orange;
+    margin-bottom: 5px;
+  }
+  .cajaAnimada {
+    animation: girar 2s ease-in-out;
+  }
+
+  @keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("ti").innerText = "otra"
+            document.getElementById("ti").style.color = "red"
+    });
+    </script>
+</head>
+<body>
+
+
+    <h1 id="ti">titulo</h1>
+
+
+
+<button id="btn">Haz clic</button>
+<div id="caja1" style="width:200px; height:100px; background-color:lightblue;">Pasa el mouse</div>
+<input type="text" id="teclado" placeholder="Escribí algo" /> 
+<p>texto de imput: <span id="text"></span></p>
+
+<form id="miFormulario">
+  <input type="text" required />
+  <button type="submit">Enviar</button>
+</form>
+
+<select id="seleccion" style="margin-top: 20px;">
+  <option value="html">HTML</option>
+  <option value="css">CSS</option>
+  <option value="js">JavaScript</option>
+</select>
+
+<p id="parrafo">Doble clic en este texto</p>
+
+<div id="caja" draggable="true">Arrastrame</div>
+
+<h2>Iniciar sesión</h2>
+<input type="text" id="usuario" placeholder="Usuario"><br><br>
+<input type="password" id="password" placeholder="Contraseña"><br><br>
+<button id="login">Ingresar</button>
+
+
+  <h2>Animación con botón</h2>
+  <div id="cajaAnimada"></div>
+  <button id="animarBtn">Mover caja</button>
+
+  
+<!-- eventos media -->
+ <video id="miVideo" width="300" controls style="margin-top: 20px;">
+  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+  Tu navegador no soporta videos HTML5.
+</video>
+
+<script>
+  document.getElementById("btn").addEventListener("click", () => {
+    alert("¡Hiciste clic!");
+  });
+
+    document.getElementById("caja1").addEventListener("mouseover", (e) => {
+    console.log("El mouse está encima de la caja");
+    //console.dir(e)
+    e.target.style.backgroundColor = "red";
+  });
+
+let text = document.getElementById("text");
+document.getElementById("teclado").addEventListener("keydown", (e) => {
+    console.log(`Presionaste la tecla: ${e.key}`);
+    text.innerText = e.target.value;
+  });
+
+ document.getElementById("miFormulario").addEventListener("submit", (e) => {
+    e.preventDefault(); // evita que se recargue la página
+    alert("Formulario enviado");
+  });
+
+   document.getElementById("seleccion").addEventListener("change", (e) => {
+    console.log("Elegiste: " + e.target.value);
+  });
+
+
+   document.getElementById("parrafo").addEventListener("dblclick", () => {
+    alert("¡Doble clic detectado!");
+  });
+  
+  //EVENTO PARA MOVER LA CAJA 
+   const caja = document.getElementById("caja");
+
+  caja.addEventListener("dragstart", (e) => {
+    e.dataTransfer.setData("text/plain", "dragging");
+    console.log("Comenzó a arrastrarse");
+  });
+
+  // Simulamos un "contenedor destino"
+  document.body.addEventListener("dragover", (e) => e.preventDefault());
+
+  document.body.addEventListener("drop", (e) => {
+    e.preventDefault();
+    caja.style.left = e.pageX + "px";
+    caja.style.top = e.pageY + "px";
+    console.log("Soltaste la caja");
+  });
+  // FIN DE EVENTO PARA MOVER LA CAJA 
+
+  document.getElementById("usuario").addEventListener("focus", (e) => {
+    e.target.style.backgroundColor = "grey"
+    e.target.value == "admin" ? e.target.style.backgroundColor = "rgba(0, 128, 0, 0.628)" : e.target.style.backgroundColor = "rgba(233, 56, 56, 0.679)"
+  })
+
+  document.getElementById("login").addEventListener("click", () => {
+    const user = document.getElementById("usuario").value;
+    const pass = document.getElementById("password").value;
+    const correcto = user === "admin" && pass === "1234";
+
+    document.body.style.backgroundColor = correcto ? "lightgreen" : "lightcoral";
+    alert(correcto ? "Acceso permitido" : "Acceso denegado");
+
+    /* para hacer que solo los input cambien el color si pones bien la contra
+    const usuarioInput = document.getElementById("usuario");
+    const passwordInput = document.getElementById("password");
+    
+    usuarioInput.style.backgroundColor = user === "admin" ? "lightgreen" : "lightcoral";
+    passwordInput.style.backgroundColor = pass === "1234" ? "lightgreen" : "lightcoral";
+    */
+  });
+
+
+
+  // Animar caja con botón
+    const animarBtn = document.getElementById("animarBtn");
+    const cajaAnimada = document.getElementById("cajaAnimada");
+
+    animarBtn.addEventListener("click", () => {
+      cajaAnimada.classList.remove("cajaAnimada");
+      void cajaAnimada.offsetWidth; // reinicia animación
+      cajaAnimada.classList.add("cajaAnimada");
+    });
+
+    cajaAnimada.addEventListener("animationend", () => {
+    alert("🎉 La animación terminó");
+    });
+
+
+    //evento media
+      const video = document.getElementById("miVideo");
+
+  video.addEventListener("play", () => {
+    console.log("🎬 El video empezó a reproducirse");
+  });
+
+  video.addEventListener("pause", () => {
+    console.log("⏸️ El video se pausó");
+  });
+
+  video.addEventListener("ended", () => {
+    alert("✅ El video terminó");
+  });
+
+
+
+  // POR ULTIMO MOSTRAR LOS miscellaneous (en ingles : "miscelaneo" agrupa eventos que no entran en otra categoria especifica) 
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("✅ El DOM ya está listo");
+});
+
+window.addEventListener("beforeunload", (e) => {
+  e.preventDefault();
+  e.returnValue = ""; // Chrome necesita esta línea
+  return "¿Estás seguro que querés salir?";
+});
+
+</script>
+    
+</body>
+</html>

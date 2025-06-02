@@ -1,0 +1,33 @@
+.contenedorCards {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px; 
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.product {
+    height: 320px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid grey;
+    margin: 10px;
+    box-shadow: 10px 13px 5px -4px rgba(0,0,0,0.23);
+    -webkit-box-shadow: 10px 13px 5px -4px rgba(0,0,0,0.23);
+    -moz-box-shadow: 10px 13px 5px -4px rgba(0,0,0,0.23);
+}
+
+.product img {
+    width: 200px;      
+}
+.product h3 {
+    margin-top: 0;
+}
+.butt{
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px;
+    background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(186,78,157,1) 65%, rgba(252,70,107,1) 100%);
+}

@@ -17,7 +17,8 @@ body {
   }
   
   .navbar {
-    background: #1E2A38; /* Azul oscuro */
+    /*  background: #1E2A38;Azul oscuro */
+    background-color: #5BC0BE;
     position: sticky;
     top: 0;
     z-index: 1000;

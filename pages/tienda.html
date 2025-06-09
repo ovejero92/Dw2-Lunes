@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="../assets/styles/tienda.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <!-- driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js/dist/driver.min.css" />
+
+
 </head>
 <body>
     <!-- Navbar -->
@@ -22,7 +26,7 @@
                     <li><a href="./ofertas.html" class="hover:text-gray-800">Ofertas</a></li>
                     <li><a href="./contacto.html" class="hover:text-gray-800  mr-[1.2rem]">Contacto</a></li>
                     <li class="absolute -right-[2.5rem] -top-[0.7rem] bg-black p-3 rounded-lg">
-                        <button onclick="abrirCarrito()" class="hover:text-gray-800">
+                        <button id="abrir-carrito" onclick="abrirCarrito()" class="hover:text-gray-800">
                             <i class="fa-solid fa-bag-shopping text-white"></i>
                         </button>
                         <span id="countCard" class="absolute hidden w-[2rem] h-[2rem] rounded-lg bg-red-800 text-white text-2xl scale-50 flex justify-center -right-4 top-6"></span>
@@ -33,7 +37,7 @@
     </nav>
 
     <!-- Carrito -->
-    <div id="modalCarrito" class="fixed inset-0 flex items-center justify-center bg-gray-600 bg-opacity-50 hidden">
+    <div id="modalCarrito" class="fixed inset-0 flex items-center justify-center bg-gray-600 bg-opacity-50 hidden z-20">
         <div class="bg-white w-96 rounded-lg shadow-lg p-6 relative" >
             
             <h2 class="text-lg font-bold text-gray-800">Carrito de Compras</h2>
@@ -84,7 +88,7 @@
             </div>
         </div>
     </footer>
-    <script src="../assets/js/db/BaseDeDatosHarcodeado.js"></script>
+    <script src="../assets/js/db/BaseDeDatosHarcodeados.js"></script>
     <script src="https://kit.fontawesome.com/76e20a326e.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
